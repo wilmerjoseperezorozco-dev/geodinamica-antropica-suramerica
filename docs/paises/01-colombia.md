@@ -86,17 +86,28 @@ El portal [redgeodesica.igac.gov.co](https://redgeodesica.igac.gov.co/) confirma
 
 Esto es más capacidad de tiempo real de la que se asumió en la primera versión de `docs/08-tiempo-real.md` (que describía la cobertura GNSS colombiana como "dispersa"). **Corrección**: la infraestructura activa ya existe a escala nacional; lo que falta no es la red GNSS sino integrarla con InSAR y con la red gravimétrica en un pipeline de atribución (ver §6.1 y `08-tiempo-real.md`).
 
-### 6.4 Estación MAGNA-ECO CORS en La Guajira (verificado por búsqueda dirigida)
+### 6.4 Estación MAGNA-ECO CORS en La Guajira — identificada con código exacto (2026-09-18)
 
-Existe al menos **una estación CORS de la red activa MAGNA-ECO en el departamento de La Guajira** (cercana a Riohacha), integrada a SIRGAS-CON con procesamiento semanal que genera series de velocidad de alta precisión. Fuente: [Red Geodésica Nacional Activa MAGNA-ECO — Revista Geodata](https://revistageodata.icde.gov.co/edicion-5/red-geodesica-nacional-activa-magna-eco-densificacion-y-cobertura-de-estaciones-cors-en).
+Extraído directamente del dataset público `Red activa Magna ECO. Colombia. 2021.` (68 estaciones nacionales, GeoJSON descargable vía `https://ider.cundinamarca.gov.co/datasets/c1418695bcec4e1cba9f1d2bb6e6a8c4_0.geojson`):
 
-**Hallazgo de esta investigación**: no se encontró ningún estudio publicado que cruce la serie de velocidad de esta estación (que ya existe y se procesa semanalmente desde hace años) con la actividad del Cerrejón, pese a estar en el mismo departamento. Es una oportunidad de análisis de bajo costo — los datos ya se están capturando, solo falta el análisis de atribución.
+- Código de estación: **RIOH** — Riohacha, La Guajira. Coordenadas: 11.5132°N, -72.8697°O. Administrada por IGAC.
+- Segunda estación cercana relevante: **VALL** — Valledupar, Cesar (10.4740°N, -73.2520°O), también IGAC.
+- Ambas integradas a SIRGAS-CON con procesamiento semanal (DGFI-TUM y centros de análisis SIRGAS) que genera series de posición/velocidad de alta precisión.
 
-### 6.5 Qué queda pendiente tras este hallazgo
+**Hallazgo de esta investigación**: no se encontró ningún estudio publicado que cruce la serie de velocidad de RIOH o VALL (que ya existen y se procesan semanalmente desde hace años) con la actividad del Cerrejón, pese a estar en departamentos vecinos/el mismo departamento. Es una oportunidad de análisis de bajo costo — los datos ya se están capturando, solo falta el análisis de atribución.
 
-1. Descargar y graficar la serie histórica completa de la estación MAGNA-ECO de La Guajira para ver si muestra tendencia de subsidencia/deformación.
-2. Solicitar (vía los contactos de §6.1) si existe medición histórica previa a 2022 en las estaciones RGAC de Bogotá, para tener más de un punto temporal.
-3. Evaluar si el SGC tiene, fuera del portal de datos abiertos, series de InSAR o gravimetría de detalle sobre el Cerrejón que no estén publicadas en el catálogo público (motivo directo del contacto institucional, no solo revisión de literatura).
+**Estado de extracción (verificado en vivo)**: la ubicación y metadato de la estación se extrajo sin restricción vía el GeoJSON público. La serie temporal de posición/velocidad propiamente dicha requiere descargar RINEX desde el Centro de Control Geodésico Nacional del IGAC (portal que solicita registro de usuario) o buscar la solución semanal publicada por el centro de análisis SIRGAS de DGFI-TUM — ninguna de las dos rutas se completó todavía en esta sesión; queda como siguiente paso concreto del issue #2/#5.
+
+### 6.5 GRACE(-FO) Data Analysis Tool — extraíble pero no trivial
+
+Se verificó en vivo la herramienta oficial [GRACE(-FO) Data Analysis Tool](https://grace.jpl.nasa.gov/data-analysis-tool/) de JPL: es una aplicación de mapa interactivo (no una API REST simple) que permite dibujar un polígono/cuenca y extraer series de tiempo de anomalía de masa. Es de acceso público sin registro, pero requiere interacción manual con el mapa (no se encontró un endpoint de consulta directa por URL en esta sesión) — extraer la serie específica de la cuenca del río Ranchería (La Guajira) es factible pero es un paso de trabajo aparte, no una descarga inmediata.
+
+### 6.6 Qué queda pendiente tras este hallazgo
+
+1. Completar la extracción interactiva de la serie GRACE(-FO) para la cuenca del Ranchería vía el Data Analysis Tool de JPL.
+2. Descargar y graficar la serie histórica de posición/velocidad de las estaciones RIOH y VALL (requiere registro en el Centro de Control Geodésico del IGAC o acceso a la solución semanal de DGFI-TUM/SIRGAS).
+3. Solicitar (vía los contactos de §6.1) si existe medición histórica previa a 2022 en las estaciones RGAC de Bogotá, para tener más de un punto temporal.
+4. Evaluar si el SGC tiene, fuera del portal de datos abiertos, series de InSAR o gravimetría de detalle sobre el Cerrejón que no estén publicadas en el catálogo público (motivo directo del contacto institucional, no solo revisión de literatura).
 
 ## 7. Síntesis de brechas específicas de Colombia (ver también `10-preguntas-no-resueltas.md`)
 
