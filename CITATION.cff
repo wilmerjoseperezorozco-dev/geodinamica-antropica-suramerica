@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "Si usa este trabajo, por favor cítelo como se indica a continuación."
+title: "Geodinámica Antrópica de Suramérica: redistribución de masa terrestre por minería, agua subterránea y embalses — brechas de medición y arquitectura de monitoreo"
+authors:
+  - family-names: "Pérez Orozco"
+    given-names: "Wilmer José"
+    email: "wilmerjoseperezorozco@gmail.com"
+repository-code: "https://github.com/wilmerjoseperezorozco-dev/geodinamica-antropica-suramerica"
+abstract: >
+  Inventario documentado y referenciado del estado del arte sobre redistribución
+  antrópica de masa terrestre (minería, extracción de agua subterránea, embalses)
+  en Colombia y Suramérica, y su relación medible con la rotación terrestre, la
+  deriva polar y el nivel del mar. Identifica explícitamente las brechas de
+  medición geodésica en la región (Colombia, Perú, Bolivia) frente a los casos
+  mejor instrumentados (Chile, Brasil), propone una arquitectura de monitoreo
+  cercano al tiempo real, y proyecta escenarios a 2100 basados en IPCC AR6.
+keywords:
+  - geodesia
+  - GRACE
+  - GRACE-FO
+  - deriva polar
+  - subsidencia
+  - minería
+  - agua subterránea
+  - Suramérica
+  - Colombia
+  - InSAR
+license: CC-BY-4.0
+date-released: 2026-09-18
+version: "0.1.0"
