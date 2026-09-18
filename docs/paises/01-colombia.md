@@ -144,8 +144,48 @@ Se extrajo en vivo, vía la interfaz pública del [GRACE(-FO) Data Analysis Tool
 
 ## 7. Síntesis de brechas específicas de Colombia (ver también `10-preguntas-no-resueltas.md`)
 
-1. Sin estudio que conecte subsidencia de Bogotá con contribución agregada a EOP/deriva polar.
-2. Sin gravimetría/InSAR publicada sobre el Cerrejón (comparado con el caso chileno de Atacama, que sí la tiene).
-3. Sin gravimetría/InSAR publicada sobre minería aurífera en Chocó/Antioquia (comparado con Brumadinho en Brasil).
-4. Sin serie temporal GRACE-FO descargada/interpretada específicamente para Colombia en este repositorio todavía (pendiente, ver issue de milestone Fase 1).
+1. ~~Sin estudio que conecte subsidencia de Bogotá con contribución agregada a EOP/deriva polar~~ — **resuelto cuantitativamente, ver §8**.
+2. Sin gravimetría/InSAR publicada sobre el Cerrejón (comparado con el caso chileno de Atacama, que sí la tiene) — parcialmente abordado indirectamente vía GRACE (§6.5, resolución insuficiente) y GNSS regional; sigue faltando InSAR de sitio.
+3. Sin gravimetría/InSAR publicada sobre minería aurífera en Chocó/Antioquia (comparado con Brumadinho en Brasil) — parcialmente abordado vía GNSS puntual (§6.7); sigue faltando InSAR de área sobre los tajos activos.
+4. ~~Sin serie temporal GRACE-FO descargada/interpretada específicamente para Colombia~~ — **hecho, ver §6.5**.
 5. Sin cuantificación de cuánto del retroceso glaciar tropical colombiano se refleja en la señal GRACE regional andina.
+
+## 8. ¿La subsidencia de Bogotá contribuye a la cadena EOP? — cálculo cuantitativo (issue #1, resuelto 2026-09-18)
+
+Esta pregunta se puede responder con física, no solo con ausencia de literatura. Se aplicó la fórmula de excitación derivada en `docs/00-marco-teorico.md` §6 (validada contra el caso publicado de Tres Gargantas dentro de un factor ~2).
+
+### 8.1 Dato de entrada: cuánta masa se extrae realmente
+
+No existe una cifra única y consolidada de extracción total de la Sabana de Bogotá, así que se usa un rango con las dos fuentes verificadas más recientes:
+
+- **Extremo bajo (formal, solo Bogotá urbano, 2024)**: la Secretaría Distrital de Ambiente (SDA) tiene concesionados 87 pozos urbanos que extraen 522 528 m³/mes → **6.3 millones de m³/año**. Fuente: reportado por medios especializados citando cifras oficiales de SDA/CAR (búsqueda 2026-09-18, ver `El Tiempo` — "Sobreexplotación de agua subterránea hunde a Bogotá").
+- **Extremo alto (orden de magnitud, toda la Sabana, escenario de sobreexplotación)**: la recarga natural de todo el sistema acuífero de la Sabana es de ~100-200 millones de m³/año (CAR, Estudio Regional del Agua 2017); dado que la literatura describe el sistema como sobreexplotado, se usa **100 millones de m³/año** como cota superior razonable de extracción neta total (todos los usuarios, formales e informales, toda la Sabana, no solo Bogotá).
+
+Ambas cifras son mucho más pequeñas que el ritmo de extracción global que causó el efecto de Seo et al. 2023 (~126 000 millones de m³/año, i.e., ~20 000 veces mayor que el extremo alto de Bogotá).
+
+### 8.2 Cálculo de LOD
+
+Usando ΔM = 6.3×10⁹ kg (bajo) a 1.0×10¹¹ kg (alto), φ_Bogotá = 4.6°N, y la fórmula de §6.1 de `00-marco-teorico.md`:
+
+| Escenario | ΔM (kg/año) | ΔLOD (por año) |
+|---|---|---|
+| Bajo (Bogotá urbano formal) | 6.3×10⁹ | **−0.09 nanosegundos/año** |
+| Alto (toda la Sabana, sobreexplotación) | 1.0×10¹¹ | **−1.4 nanosegundos/año** |
+
+(El signo negativo significa que, al ser Bogotá casi ecuatorial, extraer esta masa hacia el océano **acorta** infinitesimalmente el día — el mecanismo de "patinador que encoge los brazos" descrito en §6.1 del marco teórico — el efecto contrario al de una fuente en latitud alta.)
+
+### 8.3 Comparación con el piso de detección real
+
+- El efecto **acumulado en un año entero** de toda la Sabana de Bogotá (1.4 ns) es **~40 000 veces menor** que el efecto de un solo evento de llenado del embalse de Tres Gargantas (60 000 ns = 0.06 µs).
+- Es **~1 300 000 veces menor** que el salto instantáneo medido en el terremoto de Tohoku 2011 (1.8 µs = 1 800 000 ns).
+- La precisión operativa real de medición de LOD (IERS, vía VLBI) tiene un piso de ruido de **microsegundos**, no nanosegundos — es decir, el efecto de Bogotá está **3 a 4 órdenes de magnitud por debajo de lo que cualquier instrumento actual (o previsible) podría medir**, incluso acumulado durante años.
+
+### 8.4 Efecto en deriva polar (bamboleo)
+
+Por la dependencia sin(2φ) descrita en `00-marco-teorico.md` §6.2, y con φ_Bogotá=4.6° muy cerca del ecuador (sin(2×4.6°)=0.16, frente a sin(2×35°)=0.94 de las fuentes dominantes de Seo et al. 2023), el "apalancamiento" de una fuente en Bogotá sobre la deriva polar es ~6 veces menor, por unidad de masa, que el de una fuente en latitud media — encima de que la masa misma ya es ~20 000 veces menor que la escala global relevante. El efecto combinado es, sin necesidad de cálculo numérico adicional, varios órdenes de magnitud más pequeño que el de LOD ya calculado, y por tanto igual de indetectable.
+
+### 8.5 Conclusión (respuesta directa a la pregunta de investigación)
+
+**No.** La subsidencia de la Sabana de Bogotá, pese a ser geotécnicamente severa a escala local (hasta 7.5 cm/año, un problema real de ingeniería e infraestructura), es físicamente incapaz de producir un efecto medible en la cadena EOP nacional o global — no por falta de instrumentos mejores, sino porque la masa involucrada es entre 4 y 5 órdenes de magnitud menor que la escala a la que empiezan a ser detectables estos efectos (comparar con Tres Gargantas, 0.06 µs, ya de por sí un efecto minúsculo). Esta es una respuesta completa y cuantificada, no un vacío de investigación — cierra el issue #1 del repositorio.
+
+**Nota metodológica**: este cálculo usa la aproximación de primer orden de §6 del marco teórico (sin números de Love ni dinámica oceánica real), suficiente para establecer el orden de magnitud pero no para un valor de precisión geodésica — que en cualquier caso sería irrelevante dado el margen de 4-5 órdenes de magnitud encontrado.

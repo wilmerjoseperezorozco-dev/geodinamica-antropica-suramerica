@@ -4,7 +4,7 @@ Organizadas por alcance: Colombia → Suramérica → global. Cada una nace de u
 
 ## Colombia
 
-1. ¿Cuánto contribuye la subsidencia de la Sabana de Bogotá (hasta 7.5 cm/año medida) a la señal agregada de deriva polar o LOD a escala nacional? — sin estudio publicado que conecte ambas escalas.
+1. ~~¿Cuánto contribuye la subsidencia de la Sabana de Bogotá (hasta 7.5 cm/año medida) a la señal agregada de deriva polar o LOD a escala nacional?~~ — **RESUELTO 2026-09-18**: no de forma medible. Cálculo físico de primer orden (validado contra Tres Gargantas) da −0.09 a −1.4 nanosegundos/año de LOD, 4-5 órdenes de magnitud por debajo del piso de detección operativo (microsegundos). Ver `paises/01-colombia.md` §8.
 2. ¿Existe subsidencia medible por InSAR en el Cerrejón, comparable a la de Atacama (1-2 cm/año)? — nunca medido públicamente.
 3. ¿Cuánta masa se ha movido por minería aurífera ilegal en Chocó/Antioquia (69 123 ha en 2022) en términos gravimétricos, no solo de área deforestada? — el monitoreo actual (UNODC/SIMCI) es de área, no de masa.
 4. ¿Cuánto del retroceso glaciar tropical colombiano (≥50% de área en 50 años) se refleja de forma aislable en la señal GRACE regional andina, separado de Perú/Ecuador/Bolivia?

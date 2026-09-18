@@ -58,3 +58,37 @@ Fuente primaria: [Seo et al. 2023, GRL](https://agupubs.onlinelibrary.wiley.com/
 - **Predicción de polar motion/LOD**: LSTM, CNN-LSTM-atención, EEMD-LSTM; mejoras de 48-53% en MAE a 6 días frente al método operativo IERS Bulletin A.
 
 Ver `docs/10-preguntas-no-resueltas.md` para las brechas que esta línea de IA todavía no resuelve (atribución de fuente, cobertura in situ desigual).
+
+## 6. Fórmula de excitación de la cadena EOP por redistribución de masa local (metodología reusable)
+
+Este repositorio necesitaba una forma de responder, con física y no solo con analogía, si una redistribución de masa local (ej. un acuífero, una mina) es capaz de producir un cambio medible en la cadena EOP (deriva polar, LOD). No existía en la literatura revisada una fórmula lista para aplicar caso por caso — se deriva aquí a partir de la teoría estándar del tensor de inercia terrestre (Munk & MacDonald 1960; Lambeck 1980), en su versión de primer orden (sin números de Love elásticos ni autoatracción oceánica, que sí usan los cálculos operativos de IERS/JPL).
+
+**Modelo físico**: una masa ΔM se extrae de un punto en la superficie a latitud φ y se redistribuye, en promedio, sobre el océano global (aproximación estándar en estudios de agotamiento de acuíferos, incluido Seo et al. 2023 §4).
+
+### 6.1 Efecto en LOD (momento de inercia axial C)
+
+```
+ΔC = ΔM · R² · (2/3 − cos²φ)        [2/3 = promedio de cos²φ sobre una esfera = efecto del océano]
+Δω/ω = −ΔC/C                          [conservación del momento angular, C·ω = const]
+ΔLOD = −LOD₀ · (Δω/ω)
+```
+
+Con C = 8.0365×10³⁷ kg·m² (momento de inercia axial terrestre), R = 6.371×10⁶ m, LOD₀ = 86400 s.
+
+**Consecuencia no trivial**: el factor (2/3 − cos²φ) es **negativo en el ecuador** (cos²0°=1 > 2/3) y se vuelve positivo en latitudes altas (cos²φ→0). Esto significa que extraer masa de una fuente **ecuatorial** y moverla al océano **acelera** la rotación (acorta el LOD) — el mismo efecto de "patinador que encoge los brazos" — mientras que extraer masa de una fuente en **latitud alta** (glaciares, acuíferos templados) la **frena** (alarga el LOD). El factor es máximo en magnitud exactamente en el ecuador (φ=0° → factor = −1/3) y nulo cuando cos²φ=2/3 (φ≈35.26°, el "ángulo mágico").
+
+### 6.2 Efecto en deriva polar (bamboleo)
+
+La excitación del movimiento del polo depende de los productos de inercia (I₁₃, I₂₃), que escalan con **sin(2φ)** en vez de cos²φ — es decir, se anulan en el ecuador y son máximos cerca de ±45°. Esto es la razón física por la que Seo et al. (2023) encuentran la mayor contribución a la deriva polar en fuentes de latitud media (oeste de EE.UU. ~35-40°N, noroeste de India ~28-30°N): están cerca del máximo de sin(2φ), no es casualidad geográfica.
+
+### 6.3 Validación de la fórmula contra un caso ya publicado (control de calidad)
+
+Antes de aplicar esta fórmula a un caso nuevo de este repositorio, se validó contra el efecto ya publicado de la represa de las Tres Gargantas (Chao et al., ~40 km³ de agua embalsada, φ≈30.8°N, efecto reportado: **+0.06 microsegundos** de LOD, un alargamiento):
+
+- ΔM = 4×10¹³ kg (agua añadida al embalse, tomada del promedio oceánico)
+- cos²(30.8°) = 0.739 → factor (cos²φ − 2/3) = +0.072 (signo invertido porque aquí la masa se **añade** en tierra, no se extrae)
+- ΔC = +1.17×10²⁶ kg·m² → ΔLOD ≈ **+0.126 microsegundos**
+
+El resultado del modelo simplificado (+0.126 µs) coincide en orden de magnitud y signo con el valor publicado (+0.06 µs) — dentro de un factor ~2, la diferencia esperada por omitir números de Love elásticos y la dinámica real de redistribución oceánica. **Esto da confianza suficiente para usar la fórmula en la comparación de órdenes de magnitud que es el propósito de este repositorio** (no para sustituir un cálculo geodésico operativo de precisión).
+
+Aplicación de esta metodología al caso de Bogotá: ver `docs/paises/01-colombia.md` §8.
