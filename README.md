@@ -64,14 +64,19 @@ LICENSE
 3. Toda brecha de datos se documenta explícitamente como tal — "no se encontró estudio publicado sobre X" es un resultado válido de esta investigación, no un vacío que se rellena con especulación.
 4. Las proyecciones a 2100 parten de escenarios oficiales (IPCC AR6 SSP1-1.9 a SSP5-8.5) y se extrapolan regionalmente con supuestos declarados explícitamente.
 
-## 7. Cómo citar
+## 7. Seguimiento del proyecto
 
-Ver [CITATION.cff](CITATION.cff). DOI de Zenodo pendiente de activación (ver sección de publicación en el issue de milestone correspondiente).
+- [Milestones](https://github.com/wilmerjoseperezorozco-dev/geodinamica-antropica-suramerica/milestones) — 7 fases, de la línea base (completada) a la publicación con DOI.
+- [Issues](https://github.com/wilmerjoseperezorozco-dev/geodinamica-antropica-suramerica/issues) — cada pregunta de investigación de `docs/10-preguntas-no-resueltas.md` es un issue rastreable.
 
-## 8. Licencia
+## 8. Cómo citar
+
+Ver [CITATION.cff](CITATION.cff) y [.zenodo.json](.zenodo.json). DOI de Zenodo pendiente de activación — ver [issue de Fase 6](https://github.com/wilmerjoseperezorozco-dev/geodinamica-antropica-suramerica/milestone/7).
+
+## 9. Licencia
 
 Contenido documental bajo [CC BY 4.0](LICENSE).
 
-## 9. Autor
+## 10. Autor
 
 Wilmer José Pérez Orozco — investigación independiente, Barranquilla/Tubará, Atlántico, Colombia.
