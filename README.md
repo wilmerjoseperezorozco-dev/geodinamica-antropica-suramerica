@@ -48,6 +48,8 @@ docs/
     04-peru.md                    Cerro de Pasco — caso de vacío de datos geodésicos
     05-bolivia.md                 Salar de Uyuni — caso de vacío de datos geodésicos
     06-argentina.md               Vaca Muerta (sismicidad inducida), Andes (glaciares)
+    07-ecuador.md                  Glaciares (Cotopaxi/Antisana/Chimborazo), latitud ecuatorial óptima para LOD
+    08-venezuela.md                Costa Oriental del Lago de Maracaibo — hasta 7 m de subsidencia petrolera
   07-mineria-comparativo.md    Tabla comparativa por país
   08-tiempo-real.md            Arquitectura propuesta de monitoreo casi en tiempo real
   09-proyeccion-2100.md        Escenarios a 2100 basados en IPCC AR6 + extrapolación regional

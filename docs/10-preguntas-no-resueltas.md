@@ -11,11 +11,14 @@ Organizadas por alcance: Colombia → Suramérica → global. Cada una nace de u
 
 ## Suramérica
 
-5. ¿Por qué solo Chile y Brasil tienen cuantificación geodésica satelital publicada de deformación minera, de 7 sitios mayores revisados? (ver `09-proyeccion-2100.md` §4 — hipótesis: capacidad institucional local, no severidad del fenómeno).
+5. ~~¿Por qué solo Chile y Brasil tienen cuantificación geodésica satelital publicada de deformación minera?~~ — **ACTUALIZADO 2026-09-18 (parcialmente resuelto)**: son 3, no 2 — Venezuela también la tiene (DInSAR-PSI, Costa Oriental del Lago de Maracaibo, hasta 7 m de subsidencia). Esto matiza la hipótesis original: la severidad extrema del fenómeno (7 m es el mayor de todo el repositorio) parece ser suficiente por sí sola para generar instrumentación, incluso sin la capacidad institucional robusta de Chile/Brasil — Venezuela lo logró pese a su crisis institucional. Ver `paises/08-venezuela.md` §4 y `07-mineria-comparativo.md`. Queda abierto confirmar si esta hipótesis revisada (severidad extrema O capacidad institucional) explica también la ausencia de estudio en Cerrejón/Cerro de Pasco/Uyuni.
 6. ¿Existe subsidencia en el Salar de Uyuni comparable a Atacama? — nunca medido públicamente, pese a compartir el mismo mecanismo de extracción.
 7. ¿Existe subsidencia en Cerro de Pasco (Perú), el sitio minero más antiguo del continente? — nunca medido con InSAR/gravimetría pese a décadas de caracterización ambiental.
 8. ¿Hay un vínculo cuantificable entre la sismicidad inducida de Vaca Muerta (548 sismos 2018-2025) y la señal de pérdida de masa glaciar andina en la misma cuenca hidrográfica? — nunca estudiado de forma conjunta.
 9. ¿Por qué la Amazonía gana agua subterránea (+22.24 km³/año) mientras la tendencia global es de pérdida? ¿Es reversible con deforestación acelerada, y en qué horizonte temporal?
+10. ¿Se ha desacelerado la subsidencia de la Costa Oriental del Lago de Maracaibo (Venezuela) en proporción a la caída de la producción petrolera nacional desde 2019? — la última medición DInSAR pública es de 2018-2019, sin actualización posterior encontrada.
+11. ¿Qué llevó a que múltiples estaciones GNSS venezolanas de la red SIRGAS-CON (CN39, CN41, MARA, BANS, CRCS, CUM3) pasaran a estado "removed"? ¿Pérdida de mantenimiento institucional, o decisión deliberada? — hallazgo indirecto sin explorar, ver `paises/08-venezuela.md` §5.
+12. ¿Cuánto contribuye el retroceso glaciar ecuatoriano (32.6% de pérdida nacional, hasta 54% en Cotopaxi) a la señal GRACE regional? — nunca calculado ni extraído en este repositorio (a diferencia de Colombia, donde sí se hizo), pendiente para la siguiente fase.
 
 ## Global (más allá de Suramérica, identificadas en la sesión previa de esta investigación)
 
