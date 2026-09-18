@@ -42,6 +42,8 @@ Fuentes:
 - [Reassessment of Colombia's tropical glaciers retreat rates](https://adgeo.copernicus.org/articles/22/107/2009/adgeo-22-107-2009-metrics.html)
 - [Recent evolution of a vanishing tropical Andean glacier: Glaciar de Conejeras, Colombia — HESS](https://hess.copernicus.org/articles/22/5445/2018/)
 
+**Actualización con datos IDEAM 2024 (verificado en vivo, 2026-09-18)**: el área glaciar nacional cayó a **30.83 ± 0.48 km²** en 2024 (de 33.09 km² en 2022, −6.8% en solo 2 años); desde mediados del s. XIX (347.9 km²) Colombia ha perdido el **91%** de su área glaciar. El Nevado Santa Isabel perdió 45% de su área en 2 años y el "Glaciar Conejeras" se extinguió en 2024; se proyecta la extinción total de Santa Isabel en ~5 años. El volumen total de hielo remanente se estima en **1.68 km³** (rango 1.16-1.94 km³, GlaThiDa/modelo multi-ensemble). Fuentes: [IDEAM — Glaciares en Colombia](https://ideam.gov.co/nuestra-entidad/ecosistemas-e-informacion-ambiental/glaciares/glaciares-en-colombia), [Informe del estado de los glaciares colombianos 2024 — IDEAM (PDF)](https://ideam.gov.co/sites/default/files/prensa/boletines/2025-12-29/informe-del-estado-de-los-glaciares-colombianos-2024.pdf), [Glacier thickness and ice volume of the Northern Andes — Nature Scientific Data](https://www.nature.com/articles/s41597-022-01446-8).
+
 ## 4. Minería aurífera ilegal (Antioquia, Chocó, Bajo Cauca)
 
 - En Chocó y Antioquia, el 89% y 51% respectivamente de las operaciones mineras detectadas son ilegales.
@@ -245,3 +247,42 @@ Volumen: 3.46×10⁹ m³  →  Masa (densidad roca/sedimento ≈2000 kg/m³): 6.
 ### 10.3 Conclusión
 
 La minería aurífera de Bajo Cauca no contribuye de forma medible a la cadena EOP — pero por una razón distinta y más fundamental que en Bogotá o el Cerrejón: no es que la masa sea insuficiente (de hecho, en la prueba de robustez de §10.2 resulta comparable a Tres Gargantas), es que **el mecanismo de transporte global que sí opera para el agua subterránea no opera para el sedimento minero**, que se queda dentro de la misma cuenca. El impacto real y medible de esta minería sigue siendo el ya documentado en §4: deforestación, contaminación por mercurio, y alteración del cauce fluvial — variables que la cadena EOP, por diseño, no puede capturar y que siguen requiriendo InSAR/gravimetría de sitio (issue #3, todavía abierto en ese frente).
+
+## 11. Glaciares tropicales colombianos y la señal GRACE andina — issue #4, resuelto 2026-09-18
+
+Pregunta original: ¿se puede aislar la contribución del retroceso glaciar colombiano dentro de la señal GRACE agregada de los Andes? Se responde en dos partes: (a) extracción real de GRACE sobre los macizos glaciares colombianos, y (b) cálculo físico de la masa perdida usando datos del IDEAM, igual que se hizo para La Guajira y Bogotá.
+
+### 11.1 Dato de entrada verificado en vivo (IDEAM + GlaThiDa, 2026-09-18)
+
+- Área glaciar nacional 2024: **30.83 ± 0.48 km²** (de 33.09 km² en 2022) — ver actualización en §3.
+- Volumen de hielo remanente: **1.68 km³** (rango 1.16-1.94 km³).
+- Tasa de pérdida de masa de glaciares tropicales andinos: **0.6 m equivalente de agua/año** (cumbres >5400 m) a **1.2 m eq. agua/año** (cumbres <5400 m) — la mayoría de las cumbres colombianas (Ruiz, Tolima, Santa Isabel, Cocuy) están por debajo de 5400 m, así que se usa el rango completo como cota conservadora-alta.
+- Contexto regional: de los ~1920 km² de glaciares tropicales existentes en Suramérica, Perú tiene ~1344 km² (70%), Bolivia ~384 km² (20%), Ecuador ~76.8 km² (4%), y Colombia-Venezuela ~76.8 km² (4%, cifra de un inventario más antiguo — con Venezuela ya sin glaciares activos, el remanente es casi todo colombiano). **Con el dato IDEAM 2024 más reciente (30.83 km²), Colombia es responsable de apenas ~1.6% del área glaciar tropical andina total** — el país con menor superficie glaciar de los cuatro.
+
+### 11.2 Extracción real de GRACE sobre los macizos glaciares (Cordillera Central)
+
+Se repitió la metodología de §6.5 (La Guajira) con un recuadro sobre el clúster Ruiz-Tolima-Santa Isabel-Huila (2.67°N a 5.48°N, -76.15° a -74.46°O), abril 2002 - julio 2026, mismo `GRACE(-FO) Data Analysis Tool` de JPL.
+
+- Ajuste lineal: `y = 0.00422x − 1.5626` — usando la misma escala temporal que La Guajira (§6.5, donde el mismo tipo de coeficiente 0.00477 equivalía a +0.058 cm/año), esto equivale a **+0.051 cm/año**, de nuevo estadísticamente indistinguible de cero.
+- El patrón visual es el mismo que en La Guajira: oscilaciones de ±15-17 cm dominadas por El Niño/La Niña, sin tendencia de agotamiento visible.
+
+**Confirmación empírica directa**: igual que con el Cerrejón, GRACE no puede ver el retroceso glaciar real y bien documentado por el IDEAM a nivel de terreno — no porque el fenómeno no exista (existe, y es severo: 91% de pérdida histórica, extinción del Glaciar Conejeras en 2024), sino porque 30.83 km² de hielo es una fracción ínfima de la superficie de un recuadro que necesariamente incluye toda la Cordillera Central para tener sentido a la resolución de GRACE.
+
+### 11.3 Cálculo físico de la contribución a la cadena EOP
+
+```
+ΔM = 30.83×10⁶ m² × (0.6 a 1.2 m/año) × 1000 kg/m³ = 1.85×10¹⁰ a 3.70×10¹⁰ kg/año
+φ ≈ 5.5°N (promedio ponderado por área entre Cocuy 6.4°N y el clúster Ruiz-Tolima-Huila ~4.8°N)
+cos²(5.5°) = 0.9908  →  factor = −0.3241
+ΔLOD ≈ −0.26 a −0.52 nanosegundos/año
+```
+
+### 11.4 Resultado — el segundo caso más significativo del repositorio después de la Amazonía
+
+- Es **mayor que Bogotá (−0.09 ns/año) y el Cerrejón (−0.08 ns/año)**, y del mismo orden que Atacama (−0.48 ns/año) — pese a que el área glaciar colombiana es solo el 1.6% del total andino y muchísimo más pequeña que cualquier operación minera industrial calculada en este repositorio.
+- La razón física: los glaciares tropicales pierden masa por unidad de área mucho más rápido que un acuífero se agota, y están ubicados casi exactamente en el ecuador (el punto de máxima eficiencia física para el efecto en LOD, ver `00-marco-teorico.md` §6.1).
+- Sigue estando **~2-3 órdenes de magnitud por debajo** de Tres Gargantas y del piso de detección del IERS — el mismo veredicto que todos los demás casos.
+
+### 11.5 Respuesta directa a la pregunta del issue #4
+
+**¿Se puede aislar la contribución colombiana en la señal GRACE regional andina?** Técnicamente sí es *espacialmente* separable (los macizos colombianos están a cientos de km de los glaciares ecuatorianos/peruanos más cercanos, en mascons GRACE distintos), pero la pregunta es irrelevante en la práctica: **la masa de hielo colombiana (1.6% del total andino) es tan pequeña que ni siquiera aislada es detectable contra el ruido climático natural** — lo confirma la extracción real de §11.2. La razón por la que nadie ha publicado esta separación no es una limitación metodológica que este repositorio pueda resolver con mejor procesamiento: es que, al nivel de Colombia sola, no hay señal que separar. El caso interesante para investigación futura sigue siendo Perú (70% del hielo andino) o Bolivia (20%), no Colombia.

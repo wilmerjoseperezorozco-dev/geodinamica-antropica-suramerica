@@ -30,6 +30,7 @@ Con la metodología de `00-marco-teorico.md` §6 (validada contra Tres Gargantas
 | Vaca Muerta | Argentina | Hidrocarburos | Sí (combustión) | 38.5°S | +0.07 ns/año | 0.97 (máximo absoluto, pero mecanismo distinto al agua) |
 | Bajo Cauca (oro) | Colombia | Roca/sedimento | **No** — se queda en la cuenca | 7.5°N | ~0 por diseño físico | n/a |
 | Cerro de Pasco | Perú | Roca/sedimento | **No** — se queda en la cuenca | 10.7°S | ~0 por diseño físico | n/a |
+| Glaciares Cordillera Central | Colombia | Hielo (deshielo) | Sí | 5.5°N | −0.26 a −0.52 ns/año | 0.19 (bajo, pero segunda mayor magnitud de LOD del repositorio) |
 
 **Lectura del patrón**:
 1. **El tipo de sustancia importa más que la magnitud de la operación**: la minería de sólidos (oro, plomo, zinc) tiene efecto nulo en la cadena EOP *por construcción física*, sin importar cuánta masa se remueva, porque el material no sale de la cuenca. La minería de fluidos (salmuera, hidrocarburos, agua subterránea) sí es físicamente elegible, aunque en la práctica ningún caso individual suramericano se acerque a ser medible.

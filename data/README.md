@@ -10,6 +10,10 @@ Esta carpeta contiene datos **derivados**, extraídos directamente de fuentes pr
 - **Nota de calidad**: contiene el vacío de datos conocido entre GRACE y GRACE-FO (última observación 2017-06-11, siguiente 2018-06-16) — esto es una característica real de la misión, no un error de extracción (ver `docs/00-marco-teorico.md` §5 sobre gap-filling).
 - **Análisis derivado**: ver `docs/paises/01-colombia.md` §6.5.
 
+## Serie GRACE — Cordillera Central (glaciares), sin archivo CSV dedicado
+
+Extraída con el mismo método (recuadro 2.6719N-5.4844N, 76.1484W-74.4609W, abril 2002-julio 2026) pero no se guardó el CSV crudo — el ajuste lineal (`y = 0.00422x − 1.5626`) y los extremos visuales (±15-17 cm) se leyeron directamente de la herramienta y quedaron documentados en `docs/paises/01-colombia.md` §11.2. A diferencia de la serie de La Guajira, esta no se consideró necesaria de archivar completa porque el hallazgo (ausencia de tendencia, mismo patrón ENSO) es una réplica confirmatoria del mismo fenómeno ya documentado con datos completos.
+
 ## `sirgas_neu_colombia_2004-2026.csv`
 
 - **Fuente**: [SIRGAS Analysis Centre at DGFI-TUM — Station list](https://www.sirgas.org/en/stations/station-list/), archivos NEU públicos en `https://www.sirgas.org/fileadmin/docs/SIRGAS_TS/<CODIGO>.NEU` (sin necesidad de registro ni login).
