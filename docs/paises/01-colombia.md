@@ -94,20 +94,53 @@ Extraído directamente del dataset público `Red activa Magna ECO. Colombia. 202
 - Segunda estación cercana relevante: **VALL** — Valledupar, Cesar (10.4740°N, -73.2520°O), también IGAC.
 - Ambas integradas a SIRGAS-CON con procesamiento semanal (DGFI-TUM y centros de análisis SIRGAS) que genera series de posición/velocidad de alta precisión.
 
-**Hallazgo de esta investigación**: no se encontró ningún estudio publicado que cruce la serie de velocidad de RIOH o VALL (que ya existen y se procesan semanalmente desde hace años) con la actividad del Cerrejón, pese a estar en departamentos vecinos/el mismo departamento. Es una oportunidad de análisis de bajo costo — los datos ya se están capturando, solo falta el análisis de atribución.
+**Corrección importante (verificado 2026-09-18 contra el listado oficial de SIRGAS)**: RIOH figura con estado **"removed"** — la estación dejó de operar. Su serie pública cubre 2005-10-26 a **2023-01-18** (254 observaciones semanales), no continua hasta hoy. VALL sigue activa, con serie 2004-03-24 a 2026-05-20 (789 observaciones). Ver extracción completa en §6.7.
 
-**Estado de extracción (verificado en vivo)**: la ubicación y metadato de la estación se extrajo sin restricción vía el GeoJSON público. La serie temporal de posición/velocidad propiamente dicha requiere descargar RINEX desde el Centro de Control Geodésico Nacional del IGAC (portal que solicita registro de usuario) o buscar la solución semanal publicada por el centro de análisis SIRGAS de DGFI-TUM — ninguna de las dos rutas se completó todavía en esta sesión; queda como siguiente paso concreto del issue #2/#5.
+## 6.7 Series GNSS verticales extraídas para Bajo Cauca y La Guajira (completado 2026-09-18)
 
-### 6.5 GRACE(-FO) Data Analysis Tool — extraíble pero no trivial
+Verificando el listado completo de la [red SIRGAS-CON](https://www.sirgas.org/en/stations/station-list/) (636 estaciones en el continente), se descubrió algo más valioso que RIOH para el issue #3: **hay estaciones GNSS activas operadas conjuntamente por IGAC y SGC (red "GeoRED") directamente en el corredor minero de Bajo Cauca**, con series de tiempo públicas descargables sin registro desde `https://www.sirgas.org/fileadmin/docs/SIRGAS_TS/<CODIGO>.NEU`:
 
-Se verificó en vivo la herramienta oficial [GRACE(-FO) Data Analysis Tool](https://grace.jpl.nasa.gov/data-analysis-tool/) de JPL: es una aplicación de mapa interactivo (no una API REST simple) que permite dibujar un polígono/cuenca y extraer series de tiempo de anomalía de masa. Es de acceso público sin registro, pero requiere interacción manual con el mapa (no se encontró un endpoint de consulta directa por URL en esta sesión) — extraer la serie específica de la cuenca del río Ranchería (La Guajira) es factible pero es un paso de trabajo aparte, no una descarga inmediata.
+| Estación | Municipio | Estado | Redes | Rango de datos | Observaciones |
+|---|---|---|---|---|---|
+| **EBPT** | El Bagre (Bajo Cauca, Antioquia) | activa | MAGNA-ECO, GeoRED | 2021-01-06 a 2026-05-20 (203 sem.) | En el corazón de la minería aurífera del Bajo Cauca |
+| **CASI** | Caucasia (Bajo Cauca, Antioquia) | activa | MAGNA-ECO | 2008-12-10 a 2026-05-20 (567 sem.) | Registro más largo de la zona |
+| **TARZ** | Tarazá (Bajo Cauca, Antioquia) | inactiva | MAGNA-ECO, GeoRED | 2021-03-31 a 2026-05-20 (198 sem.) | También en zona aurífera |
+| **RIOH** | Riohacha (La Guajira) | **removida** | MAGNA-ECO | 2005-10-26 a 2023-01-18 (254 sem.) | Serie discontinuada |
+| **VALL** | Valledupar (Cesar) | activa | MAGNA-ECO | 2004-03-24 a 2026-05-20 (789 sem.) | Referencia regional cercana a La Guajira |
+
+Datos crudos (componente vertical, mm) guardados en [`data/sirgas_neu_colombia_2004-2026.csv`](../../data/sirgas_neu_colombia_2004-2026.csv).
+
+**Resultado (tendencia lineal de la componente vertical, excluyendo el artefacto de marco de referencia de 2023 — ver nota de calidad abajo)**:
+- EBPT (El Bagre): **+1.33 mm/año**
+- CASI (Caucasia): **+0.75 mm/año**
+- TARZ (Tarazá): **+0.66 mm/año**
+- VALL (Valledupar): **-0.52 mm/año**
+
+Los cuatro valores son pequeños frente al ruido semanal típico (±10-15 mm) — **ninguna de las estaciones muestra una tendencia de subsidencia clara y sostenida en su ubicación exacta**.
+
+**Nota de calidad honesta (importante)**: las series de EBPT, TARZ y VALL muestran un salto simultáneo de +60 a +155 mm entre marzo y mayo de 2023, coincidiendo con cambios documentados de marco de referencia geodésico en los propios archivos (transición IGb14→IGS20, parte de la actualización mundial a ITRF2020). Un salto idéntico en tres estaciones separadas por cientos de km en las mismas fechas **no puede ser una señal geofísica real** — es casi con certeza un artefacto de reprocesamiento. Se excluyó ese período (feb-jun 2023) del cálculo de tendencia anterior. Este tipo de artefacto es exactamente el motivo por el que un análisis riguroso no puede tomar series GNSS crudas sin control de calidad — lección metodológica directa para cualquier trabajo futuro de este repositorio.
+
+**Interpretación honesta**: que una estación CORS ubicada en el pueblo de El Bagre o Caucasia no muestre subsidencia no descarta hundimiento en el tajo minero específico, que puede estar a varios km del monumento geodésico. Es el mismo problema de resolución/ubicación que con GRACE en La Guajira (§6.5), pero a otra escala: **el CORS mide un punto, no un área** — se necesitaría InSAR (cobertura de área) centrado exactamente en las explotaciones auríferas activas para responder la pregunta de forma concluyente. Aun así, esto es la primera vez que se compila y analiza esta serie específicamente para este propósito.
+
+### 6.5 Serie GRACE(-FO) extraída para La Guajira (completado 2026-09-18)
+
+Se extrajo en vivo, vía la interfaz pública del [GRACE(-FO) Data Analysis Tool](https://grace.jpl.nasa.gov/data-analysis-tool/) de JPL (sin necesidad de registro), la serie temporal completa de anomalía de espesor de agua equivalente para un recuadro que cubre todo el departamento de La Guajira (12.5156°N a 10.3359°N, -74.0391° a -71.5078°O), abril 2002 - julio 2026, 235 observaciones mensuales. Datos crudos guardados en [`data/grace_la_guajira_2002-2026.csv`](../../data/grace_la_guajira_2002-2026.csv).
+
+**Resultado**:
+- Ajuste lineal de la propia herramienta: `y = 0.00477x − 0.99612`. Convertido a unidades físicas usando el primer y último punto de la serie, esto equivale a un cambio neto de **~+1.4 cm en 24 años (~+0.06 cm/año)** — estadísticamente indistinguible de cero frente a la variabilidad mensual observada (desviaciones de ±10 a ±20 cm).
+- **Máximo de la serie**: +33.2 cm en diciembre de 2010 — coincide exactamente con la "Ola Invernal 2010-2011", el evento de inundaciones más grave registrado en la historia de Colombia (La Niña extrema). Esto es una validación cruzada independiente: GRACE captura correctamente un evento climático nacional ya documentado, dando confianza en la calidad de la extracción.
+- **Mínimos de la serie**: -21.9 cm (marzo 2003), -18.4 cm (marzo 2020) y -18.3 cm (marzo 2016) — los dos últimos coinciden con episodios de El Niño (sequía) bien documentados en Colombia (2015-16 y 2018-2020).
+- Vacío de datos entre 2017-06-11 y 2018-06-16, consistente con el vacío conocido de 11 meses entre las misiones GRACE y GRACE-FO (`docs/00-marco-teorico.md` §5).
+
+**Interpretación honesta (hallazgo central de esta sub-sección)**: a la resolución de GRACE (un recuadro de todo un departamento, comparable al tamaño nativo de un mascon de ~3°), la señal está dominada casi por completo por el ciclo El Niño/La Niña (ENSO), no por ninguna tendencia de agotamiento a largo plazo. **La huella de extracción del Cerrejón (una mina de unas pocas decenas de km²) es, a esta escala, completamente invisible frente a la variabilidad climática natural.** Esto no es una limitación de esta investigación — es la primera demostración cuantitativa, con datos reales de Colombia, del "problema de resolución" que `10-preguntas-no-resueltas.md` (pregunta 10) planteaba de forma abstracta a partir de literatura internacional. Confirma que responder la pregunta 2 (subsidencia del Cerrejón) **requiere InSAR de alta resolución local, no GRACE** — GRACE por sí solo no puede ver este fenómeno sin importar cuántos años de datos se acumulen.
 
 ### 6.6 Qué queda pendiente tras este hallazgo
 
-1. Completar la extracción interactiva de la serie GRACE(-FO) para la cuenca del Ranchería vía el Data Analysis Tool de JPL.
-2. Descargar y graficar la serie histórica de posición/velocidad de las estaciones RIOH y VALL (requiere registro en el Centro de Control Geodésico del IGAC o acceso a la solución semanal de DGFI-TUM/SIRGAS).
+1. ~~Completar la extracción interactiva de la serie GRACE(-FO) para La Guajira~~ — **hecho, ver §6.5**.
+2. ~~Descargar y graficar la serie histórica de posición/velocidad de las estaciones RIOH y VALL~~ — **hecho sin necesidad de cuenta, vía los archivos NEU públicos de SIRGAS/DGFI-TUM, ver §6.7**. (La ruta del Centro de Control Geodésico del IGAC sigue pendiente solo si se necesita el RINEX crudo en vez de la solución semanal ya procesada; esa sí requeriría que el propio usuario del repositorio cree una cuenta.)
 3. Solicitar (vía los contactos de §6.1) si existe medición histórica previa a 2022 en las estaciones RGAC de Bogotá, para tener más de un punto temporal.
 4. Evaluar si el SGC tiene, fuera del portal de datos abiertos, series de InSAR o gravimetría de detalle sobre el Cerrejón que no estén publicadas en el catálogo público (motivo directo del contacto institucional, no solo revisión de literatura).
+5. Repetir la extracción GRACE de §6.5 para un recuadro sobre el corredor minero Bajo Cauca/Chocó y compararla con la de La Guajira, para verificar si el mismo problema de resolución aplica igual de fuerte allí.
 
 ## 7. Síntesis de brechas específicas de Colombia (ver también `10-preguntas-no-resueltas.md`)
 
