@@ -189,3 +189,59 @@ Por la dependencia sin(2φ) descrita en `00-marco-teorico.md` §6.2, y con φ_Bo
 **No.** La subsidencia de la Sabana de Bogotá, pese a ser geotécnicamente severa a escala local (hasta 7.5 cm/año, un problema real de ingeniería e infraestructura), es físicamente incapaz de producir un efecto medible en la cadena EOP nacional o global — no por falta de instrumentos mejores, sino porque la masa involucrada es entre 4 y 5 órdenes de magnitud menor que la escala a la que empiezan a ser detectables estos efectos (comparar con Tres Gargantas, 0.06 µs, ya de por sí un efecto minúsculo). Esta es una respuesta completa y cuantificada, no un vacío de investigación — cierra el issue #1 del repositorio.
 
 **Nota metodológica**: este cálculo usa la aproximación de primer orden de §6 del marco teórico (sin números de Love ni dinámica oceánica real), suficiente para establecer el orden de magnitud pero no para un valor de precisión geodésica — que en cualquier caso sería irrelevante dado el margen de 4-5 órdenes de magnitud encontrado.
+
+## 9. Aplicación al Cerrejón (La Guajira) — issue #2, complemento cuantitativo
+
+El Cerrejón es, a diferencia de la minería de oro (§10), un caso donde la fórmula de §6.1 del marco teórico **sí aplica de forma directa**: la mina usa agua de acuíferos cuaternario y terciario (bombeo de pozos de depresurización, ver §2 de este documento), el mismo mecanismo físico que Bogotá o Seo et al. 2023.
+
+### 9.1 Dato de entrada
+
+- Uso de agua reportado por fuentes especializadas: **~17 millones de litros/día** = 17 000 m³/día = **6.2 millones de m³/año**. Fuente: ver §2 de este documento (Semana, OCMAL).
+- **Caveat honesto**: esta cifra es *uso total* de la operación (incluye agua de pozos de acuífero cuaternario de alta calidad y agua salada/de depresurización del acuífero terciario) — no es necesariamente 100% agotamiento neto nuevo, igual que la cifra usada para Bogotá en §8.1. Se usa como proxy de orden de magnitud, no como cifra de precisión.
+- Latitud del Cerrejón: φ ≈ 11.05°N.
+
+### 9.2 Cálculo
+
+```
+ΔM = 6.2×10⁹ kg/año
+cos²(11.05°) = 0.9635  →  factor (2/3 − cos²φ) = −0.2968
+ΔC = 6.2×10⁹ × (6.371×10⁶)² × (−0.2968) ≈ −7.47×10²² kg·m²
+Δω/ω = −ΔC/C = 9.30×10⁻¹⁶
+ΔLOD ≈ −0.080 nanosegundos/año
+```
+
+### 9.3 Resultado
+
+**Prácticamente idéntico en magnitud al caso de Bogotá** (−0.09 ns/año) — no por coincidencia, sino porque ambos casos comparten los dos factores que determinan el resultado: un volumen de agua del mismo orden de magnitud (~6 millones de m³/año) y una latitud cercana al ecuador (el factor cos²φ apenas cambia entre 4.6° y 11°). El Cerrejón está, igual que Bogotá, **~4-5 órdenes de magnitud por debajo** del piso de detección del IERS.
+
+Para la deriva polar, sin(2×11.05°)=0.383 (frente a 0.16 de Bogotá) — un apalancamiento ~2.4 veces mayor por unidad de masa, pero irrelevante dado que la masa sigue siendo ~20 000 veces menor que la escala global relevante.
+
+**Conclusión**: al igual que Bogotá, el Cerrejón no puede producir un efecto medible en la cadena EOP. Esto no reduce la gravedad del problema hídrico local (documentado en §2) ni responde la pregunta original del issue #2 (subsidencia InSAR del terreno, que sigue sin datos) — solo cierra definitivamente la pregunta específica de si esta extracción es relevante a escala planetaria: no lo es, por la misma razón física que Bogotá.
+
+## 10. Aplicación a la minería aurífera de Bajo Cauca — issue #3, por qué el cálculo es distinto
+
+Antes de repetir el cálculo de §8-9 para Bajo Cauca, hay que resolver una pregunta previa: **¿el material removido por la minería aurífera sale realmente de la cuenca del Cauca-Magdalena, o se queda dentro de la misma región?** Esto determina si la fórmula de §6.1 del marco teórico aplica en absoluto (ver `00-marco-teorico.md` §6.4).
+
+### 10.1 Por qué el modelo de "extracción → océano global" no aplica aquí
+
+La minería aurífera de Bajo Cauca es de tipo aluvial: remueve sedimento del lecho y las orillas de los ríos Nechí y Cauca, lo procesa (dragas, monitores hidráulicos, mercurio), y el material de descarte (colas, sedimento removido) se redeposita **en el mismo sistema fluvial**, a lo sumo transportado corriente abajo dentro de la misma cuenca hidrográfica antes de sedimentarse. El agua usada para el dragado es agua superficial del propio río — que de todas formas iba a llegar al mar (Caribe, vía el Magdalena) por su curso natural; la minería no "extrae" agua nueva del sistema Tierra de la misma forma que un pozo profundo en un acuífero fósil.
+
+**Consecuencia física directa**: independientemente de cuánta masa se remueva (69 123 ha de minería ilegal en 2022, ver §4), esta actividad **no produce una redistribución de masa a escala de armónico esférico de grado 2** — la escala que domina la señal EOP. El efecto sobre la cadena EOP es, por construcción del fenómeno, indistinguible de cero.
+
+### 10.2 Prueba de robustez: incluso en el escenario más extremo posible
+
+Para confirmar que esta conclusión no depende de una subestimación de la masa, se calculó qué pasaría si (de forma físicamente incorrecta, a propósito, como cota superior) **todo** el material excavado históricamente en la minería ilegal se hubiera transportado mágicamente al océano global, igual que en el modelo de agua:
+
+```
+Área minada (2022): 69 123 ha = 691.23×10⁶ m²
+Profundidad de excavación asumida: 5 m (supuesto de orden de magnitud, no medido)
+Volumen: 3.46×10⁹ m³  →  Masa (densidad roca/sedimento ≈2000 kg/m³): 6.9×10¹² kg
+φ_BajoCauca ≈ 7.5°N  →  cos²(7.5°) = 0.983  →  factor = −0.316
+ΔC ≈ −8.9×10²⁵ kg·m²  →  ΔLOD ≈ −0.095 microsegundos (ACUMULADO, no por año — sobre toda la historia minada)
+```
+
+**Incluso en este escenario deliberadamente exagerado y físicamente injustificado** (tratar toda la roca excavada como si hubiese llegado al océano global), el efecto acumulado de décadas de minería en Bajo Cauca apenas iguala la magnitud de un solo llenado del embalse de Tres Gargantas (0.06 µs) — que de por sí ya es un efecto minúsculo, no medible en la práctica operativa.
+
+### 10.3 Conclusión
+
+La minería aurífera de Bajo Cauca no contribuye de forma medible a la cadena EOP — pero por una razón distinta y más fundamental que en Bogotá o el Cerrejón: no es que la masa sea insuficiente (de hecho, en la prueba de robustez de §10.2 resulta comparable a Tres Gargantas), es que **el mecanismo de transporte global que sí opera para el agua subterránea no opera para el sedimento minero**, que se queda dentro de la misma cuenca. El impacto real y medible de esta minería sigue siendo el ya documentado en §4: deforestación, contaminación por mercurio, y alteración del cauce fluvial — variables que la cadena EOP, por diseño, no puede capturar y que siguen requiriendo InSAR/gravimetría de sitio (issue #3, todavía abierto en ese frente).
