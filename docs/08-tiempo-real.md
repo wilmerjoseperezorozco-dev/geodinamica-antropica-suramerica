@@ -37,10 +37,12 @@ Capa 4 — Alerta temprana
 
 ## 4. Qué se necesitaría para que esto sea realmente "tiempo real" en Colombia
 
-1. Estaciones GNSS de referencia densificadas sobre sitios críticos (Sabana de Bogotá, Cerrejón, Bajo Cauca) — la red IGS actual en Colombia es dispersa fuera de las estaciones geodésicas nacionales del IGAC.
-2. Un pipeline de descarga y procesamiento automático de Sentinel-1 sobre esos mismos sitios (técnicamente factible hoy, sin desarrollo de hardware nuevo).
-3. Acuerdo de acceso a datos del SGC (gravimetría histórica de la Sabana de Bogotá) para calibrar el modelo de atribución.
-4. Ninguna de estas tres cosas requiere lanzar un satélite nuevo — es integración de fuentes existentes, lo que hace este objetivo realista a 2-3 años si se prioriza como proyecto de investigación aplicada, no como ciencia básica de largo plazo.
+**Actualizado 2026-09-18 tras verificación directa (ver `paises/01-colombia.md` §6)**: el punto 1 de esta lista estaba subestimado. IGAC opera desde 2023 un Centro de Control Geodésico Nacional con servicios en tiempo real NTRIP/VRS gratuitos, PPP en línea, y descarga diaria de RINEX de toda la Red Activa GNSS — incluida al menos una estación CORS MAGNA-ECO en La Guajira. La infraestructura de posicionamiento en tiempo real **ya existe a escala nacional**.
+
+1. ~~Estaciones GNSS de referencia densificadas~~ → **Ya existen** (Red Activa GNSS + NTRIP/VRS del IGAC). Lo pendiente es verificar densidad suficiente específicamente sobre Cerrejón y Bajo Cauca (la estación conocida de La Guajira está cerca de Riohacha, no necesariamente sobre la mina).
+2. Un pipeline de descarga y procesamiento automático de Sentinel-1 sobre esos mismos sitios — sigue pendiente; COMET-LiCS (el sistema gratuito de InSAR automatizado más usado globalmente) **no cubre Colombia por defecto** (su foco es el cinturón Alpino-Himalayo, Japón y el Rift de África Oriental) y solo procesa zonas fuera de su prioridad bajo solicitud a `comet.lics@leeds.ac.uk` con justificación institucional — verificado en vivo en el portal.
+3. Acceso a datos del SGC: **parcialmente resuelto** — el portal `datos.sgc.gov.co` ya expone en abierto la Red de Gravedad Absoluta (RGAC, 25 estaciones, 4 en Bogotá) y 220 puntos gravimétricos históricos, con contactos técnicos (`magnaeco@igac.gov.co`, `geotermia@sgc.gov.co`) embebidos en los metadatos. Lo que falta es gravimetría de detalle específicamente sobre Cerrejón/Bajo Cauca, que no aparece en el catálogo público — requiere solicitud directa.
+4. Con la Red Activa GNSS y la RGAC ya operativas, el cuello de botella real para Colombia se reduce a dos cosas: (a) conseguir que COMET-LiCS o un procesamiento propio de Sentinel-1 cubra Cerrejón/Bajo Cauca, y (b) obtener series gravimétricas de detalle del SGC sobre esos mismos sitios. Ninguna de las dos requiere lanzar un satélite nuevo ni construir infraestructura terrestre — es gestión de acceso y solicitud de procesamiento, lo que hace este objetivo más cercano de lo estimado originalmente (meses, no años, para un primer resultado preliminar).
 
 ## 5. Límite honesto
 
