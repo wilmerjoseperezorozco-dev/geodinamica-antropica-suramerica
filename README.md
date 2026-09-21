@@ -1,5 +1,7 @@
 # Geodinámica Antrópica de Suramérica
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22881753.svg)](https://doi.org/10.5281/zenodo.22881753)
+
 **Redistribución de masa terrestre inducida por el ser humano (minería, extracción de agua subterránea, embalses) y su efecto medible en la rotación, la deriva polar y el nivel del mar — con foco inicial en Colombia y expansión documentada a Suramérica.**
 
 > Estado: Fase 0 — Marco teórico y línea base completados. Fase 1 (Colombia) en curso.
@@ -76,7 +78,12 @@ LICENSE
 
 ## 8. Cómo citar
 
-Ver [CITATION.cff](CITATION.cff) y [.zenodo.json](.zenodo.json). DOI de Zenodo pendiente de activación — ver [issue de Fase 6](https://github.com/wilmerjoseperezorozco-dev/geodinamica-antropica-suramerica/milestone/7).
+Pérez Orozco, W. J. (2026). *Geodinámica antrópica de Suramérica: redistribución de masa terrestre por minería, agua subterránea y embalses — brechas de medición y arquitectura de monitoreo* (v0.3.0) [Informe]. Zenodo. https://doi.org/10.5281/zenodo.22881754
+
+- **DOI de concepto** (resuelve siempre a la versión más reciente): [10.5281/zenodo.22881753](https://doi.org/10.5281/zenodo.22881753)
+- **DOI de esta versión (v0.3.0)**: [10.5281/zenodo.22881754](https://doi.org/10.5281/zenodo.22881754)
+
+Metadatos de citación en [CITATION.cff](CITATION.cff) y [.zenodo.json](.zenodo.json). Cada nuevo release en GitHub genera automáticamente una nueva versión en Zenodo.
 
 ## 9. Licencia
 
