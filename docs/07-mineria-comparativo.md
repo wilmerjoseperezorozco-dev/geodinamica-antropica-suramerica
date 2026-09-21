@@ -2,7 +2,7 @@
 
 | País | Sitio | Recurso | Medición geodésica cuantitativa publicada | Fuente |
 |---|---|---|---|---|
-| Chile | Salar de Atacama | Litio (salmuera) | **Sí** — InSAR satelital, 1-2 cm/año de subsidencia, atribución climática vs. minera con ML | [Mining.com](https://www.mining.com/web/lithium-mining-is-slowly-sinking-chiles-atacama-salt-flat-study-shows/) |
+| Chile | Salar de Atacama | Litio (salmuera) | **Sí** — InSAR multisensor (Sentinel-1, ALOS-2, SAOCOM-1, PAZ/TerraSAR-X), hasta ~1 cm/año sobre ~8 km (2019-2021; la prensa reporta 1-2 cm/año); atribución climática vs. minera con GRACE reducido + ML (resumen AGU 2024) | [Delgado et al. 2024](https://doi.org/10.1109/TGRS.2024.3423792), [Fáundez et al. 2026](https://link.springer.com/article/10.1007/s10064-026-05047-2), [Mining.com](https://www.mining.com/web/lithium-mining-is-slowly-sinking-chiles-atacama-salt-flat-study-shows/) |
 | Brasil | Brumadinho (Minas Gerais) | Hierro (relaves) | **Sí** — InSAR, 30 cm de subsidencia precursora del colapso 2019 | [ScienceDirect](https://www.sciencedirect.com/science/article/pii/S0303243420300192) |
 | Colombia | Cerrejón (La Guajira) | Carbón | **No encontrada** — solo caracterización hídrica/social | [OCMAL](https://www.ocmal.org/agua-y-mineria-en-la-guajira/) |
 | Colombia | Chocó/Antioquia/Bajo Cauca | Oro aluvial | **No encontrada** para geodesia — sí hay teledetección de área/deforestación (UNODC) | [Mongabay](https://es.mongabay.com/2023/11/mineria-ilegal-aumento-en-colombia-informe/) |
@@ -17,7 +17,7 @@ De **8 sitios mineros/petroleros mayores** de Suramérica revisados, **3 (Chile,
 
 **Venezuela es el caso de mayor magnitud absoluta de todo el repositorio** (hasta 7 m de subsidencia acumulada en más de un siglo de extracción petrolera) — y matiza la hipótesis de la Fase 0 de que la instrumentación depende solo de la capacidad institucional local: aquí el fenómeno es tan extremo que generó estudio pese a la crisis institucional profunda del país. Ver `paises/08-venezuela.md` §4.
 
-**Implicación**: la brecha no es de interés científico ni de existencia del fenómeno — es de **instrumentación aplicada**. Los mismos satélites (Sentinel-1 InSAR, GRACE-FO) que ya cubren Atacama y Brumadinho cubren también Cerrejón, Cerro de Pasco y Uyuni. El costo marginal de extender la metodología ya validada en Chile/Brasil a estos tres sitios es, en principio, bajo — es un problema de procesamiento y publicación, no de captura de datos nuevos.
+**Implicación**: la brecha no es de interés científico ni de existencia del fenómeno — es de **instrumentación aplicada**. Los mismos satélites (Sentinel-1 InSAR, GRACE-FO) que ya cubren Atacama y Brumadinho cubren también Cerrejón, Cerro de Pasco y Uyuni. El costo marginal de extender la metodología ya validada en Chile/Brasil a estos tres sitios es, en principio, bajo — es un problema de procesamiento y publicación, no de captura de datos nuevos. La Fase 3 cuantificó esta afirmación (`12-fase3-factibilidad-metodologia-atacama.md`): la disponibilidad de escenas Sentinel-1 es equivalente en todos los sitios; Uyuni ya tiene tres marcos InSAR procesados (2014-2026), el Cerrejón uno parcial (2020-2025), y Cerro de Pasco y Bajo Cauca ninguno utilizable.
 
 ## Síntesis regional: fórmula de excitación EOP aplicada a todos los casos (2026-09-18)
 

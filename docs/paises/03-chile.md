@@ -4,7 +4,11 @@
 
 Este es, de toda la búsqueda realizada para este repositorio, **el estudio suramericano más completo y metodológicamente comparable a los estándares internacionales** (Three Gorges, groundwater pumping global de Seo et al. 2023).
 
-- Estudio de la Universidad de Chile (*IEEE Transactions on Geoscience and Remote Sensing*): el salar se está hundiendo a **1-2 cm/año** por extracción de salmuera de litio, usando datos satelitales 2020-2023.
+- Fuentes primarias identificadas (consulta del 2026-09-21; precisan la atribución inicial, basada en resúmenes de prensa):
+  - Delgado, Shreve, Borgstrom, León-Ibáñez, Castillo y Poland (2024), *IEEE Transactions on Geoscience and Remote Sensing*, DOI 10.1109/TGRS.2024.3423792: evaluación global de SAOCOM-1 (banda L) que incluye la subsidencia por bombeo de salmuera en Atacama y la contrasta con ALOS-2, Sentinel-1 y TerraSAR-X/TanDEM-X/PAZ (correlación 1:1 ± 3% en la velocidad en línea de vista).
+  - Resumen AGU 2023 (Fall Meeting, NS31A-0616): series InSAR Sentinel-1 y ALOS-2 (2019-2021) con hasta **1 cm/año** de subsidencia sobre ~8 km de halita cerca de los pozos de bombeo, y una serie Sentinel-1 descendente (oct-2014 a may-2023) que indica un proceso transitorio con variabilidad espacio-temporal significativa.
+  - Fáundez, Orpinas, Álvarez, Cumsille y Guzmán (2026), *Bulletin of Engineering Geology and the Environment*: evaluación de toda la cuenca 2019-2024 con Sentinel-1 y SBAS.
+  - Las cifras de prensa de **1-2 cm/año** (2020-2023) y del área de ~8 × 5 km no pudieron contrastarse con el texto de una fuente primaria; hasta hacerlo, el valor citable con respaldo directo es "hasta ~1 cm/año sobre ~8 km".
 - La subsidencia más severa ocurre en el sector suroeste del salar, donde se concentran las operaciones de litio; área afectada ~8 km (norte-sur) × 5 km (este-oeste).
 - Causa física: la tasa de bombeo de salmuera supera la tasa de recarga de los acuíferos, generando hundimiento por consolidación.
 - Estudio complementario: "Disentangling Climate Change and Lithium Mining Impacts on Groundwater in the Salar de Atacama Basin" — usa un enfoque híbrido EOF + machine learning sobre GRACE downscaled específicamente para **separar la causa climática de la causa minera**, el problema de atribución que en Colombia (Cerrejón) sigue sin resolverse.

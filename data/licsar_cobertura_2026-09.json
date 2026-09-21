@@ -1,0 +1,189 @@
+{
+ "Atacama (control)": {
+  "pistas_sentinel1": [
+   "149",
+   "156"
+  ],
+  "marcos": [
+   {
+    "marco": "149A_1131L_383737",
+    "epocas": 256,
+    "periodo_epocas": [
+     "20180103",
+     "20250619"
+    ],
+    "interferogramas": 133,
+    "coherencia_media_12d": null,
+    "coherencia_media_36d": null
+   },
+   {
+    "marco": "149A_11428_131313",
+    "epocas": 438,
+    "periodo_epocas": [
+     "20141027",
+     "20260427"
+    ],
+    "interferogramas": 2222,
+    "coherencia_media_12d": 0.91,
+    "coherencia_media_36d": 0.93
+   },
+   {
+    "marco": "156D_1134L_313232",
+    "epocas": 271,
+    "periodo_epocas": [
+     "20180110",
+     "20260317"
+    ],
+    "interferogramas": 232,
+    "coherencia_media_12d": null,
+    "coherencia_media_36d": null
+   },
+   {
+    "marco": "156D_11424_131313",
+    "epocas": 459,
+    "periodo_epocas": [
+     "20141016",
+     "20260329"
+    ],
+    "interferogramas": 2398,
+    "coherencia_media_12d": 0.89,
+    "coherencia_media_36d": 0.81
+   }
+  ]
+ },
+ "Uyuni (Colcha K)": {
+  "pistas_sentinel1": [
+   "149",
+   "156",
+   "76"
+  ],
+  "marcos": [
+   {
+    "marco": "149A_1131L_383737",
+    "epocas": 256,
+    "periodo_epocas": [
+     "20180103",
+     "20250619"
+    ],
+    "interferogramas": 133,
+    "coherencia_media_12d": null,
+    "coherencia_media_36d": null
+   },
+   {
+    "marco": "149A_11032_131313",
+    "epocas": 430,
+    "periodo_epocas": [
+     "20141027",
+     "20260602"
+    ],
+    "interferogramas": 2231,
+    "coherencia_media_12d": 0.71,
+    "coherencia_media_36d": 0.83
+   },
+   {
+    "marco": "156D_11028_131313",
+    "epocas": 455,
+    "periodo_epocas": [
+     "20141016",
+     "20260203"
+    ],
+    "interferogramas": 2584,
+    "coherencia_media_12d": 0.6,
+    "coherencia_media_36d": 0.46
+   },
+   {
+    "marco": "076A_11050_131113",
+    "epocas": 327,
+    "periodo_epocas": [
+     "20141103",
+     "20260416"
+    ],
+    "interferogramas": 1228,
+    "coherencia_media_12d": 0.59,
+    "coherencia_media_36d": 0.67
+   }
+  ]
+ },
+ "Cerro de Pasco": {
+  "pistas_sentinel1": [
+   "120",
+   "171",
+   "18"
+  ],
+  "marcos": [
+   {
+    "marco": "120A_09961_131313",
+    "epocas": 3,
+    "periodo_epocas": [
+     "20201011",
+     "20211217"
+    ],
+    "interferogramas": 1,
+    "coherencia_media_12d": null,
+    "coherencia_media_36d": null
+   },
+   {
+    "marco": "171D_10042_131313",
+    "epocas": 1,
+    "periodo_epocas": [
+     "20201003",
+     "20201003"
+    ],
+    "interferogramas": 0,
+    "coherencia_media_12d": 0.0,
+    "coherencia_media_36d": 0.0
+   },
+   {
+    "marco": "018A_10048_121313",
+    "epocas": 1,
+    "periodo_epocas": [
+     "20200829",
+     "20200829"
+    ],
+    "interferogramas": 0,
+    "coherencia_media_12d": 0.0,
+    "coherencia_media_36d": 0.0
+   }
+  ]
+ },
+ "Cerrejon": {
+  "pistas_sentinel1": [
+   "4",
+   "69",
+   "77"
+  ],
+  "marcos": [
+   {
+    "marco": "004A_07905_191818",
+    "epocas": 181,
+    "periodo_epocas": [
+     "20200705",
+     "20251019"
+    ],
+    "interferogramas": 1030,
+    "coherencia_media_12d": null,
+    "coherencia_media_36d": null
+   }
+  ]
+ },
+ "Bajo Cauca (El Bagre)": {
+  "pistas_sentinel1": [
+   "142",
+   "150",
+   "69"
+  ],
+  "marcos": [
+   {
+    "marco": "069D_08296_141414",
+    "epocas": 7,
+    "periodo_epocas": [
+     "20200809",
+     "20260821"
+    ],
+    "interferogramas": 10,
+    "coherencia_media_12d": 0.0,
+    "coherencia_media_36d": null
+   }
+  ]
+ }
+}

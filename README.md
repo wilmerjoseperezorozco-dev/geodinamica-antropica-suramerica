@@ -55,6 +55,9 @@ docs/
   09-proyeccion-2100.md        Escenarios a 2100 basados en IPCC AR6 + extrapolación regional
   10-preguntas-no-resueltas.md Brechas de investigación explícitas (Colombia, Suramérica, mundo)
   11-factores-futuros-medicion.md  Qué tendrá que medir la humanidad para un análisis inteligente integrado
+  12-fase3-factibilidad-metodologia-atacama.md  Factibilidad de replicar la metodología de Atacama (Uyuni, Cerro de Pasco, Cerrejón, Bajo Cauca)
+data/                          Series y resultados extraídos de fuentes abiertas (ver data/README.md)
+scripts/                       Scripts reproducibles de la Fase 3 (Sentinel-1, LiCSAR, umbrales de detección)
 CITATION.cff
 LICENSE
 ```

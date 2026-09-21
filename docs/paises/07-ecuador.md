@@ -38,5 +38,5 @@ Ecuador combina dos fuentes de deformación de la corteza que en otros países d
 ## 3. Síntesis de brechas — Ecuador
 
 1. Sin estudio publicado que conecte el retroceso glaciar (32.6% nacional, hasta 54% en Cotopaxi) con GRACE o con la cadena EOP.
-2. Sin aplicación en este repositorio de la fórmula de excitación de `00-marco-teorico.md` §6 al caso ecuatoriano — pendiente para la siguiente iteración.
+2. Sin aplicación en este repositorio de la fórmula de excitación de `00-marco-teorico.md` §6 al caso ecuatoriano — pendiente para una fase posterior.
 3. Minería aurífera amazónica y monitoreo InSAR volcánico: sin investigar todavía en este repositorio.

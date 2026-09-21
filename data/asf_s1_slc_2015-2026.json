@@ -1,0 +1,94 @@
+{
+ "Atacama (control)": {
+  "lon": -68.3,
+  "lat": -23.55,
+  "escenas_slc": 1115,
+  "por_direccion": {
+   "DESCENDING": 577,
+   "ASCENDING": 538
+  },
+  "pistas": {
+   "DESCENDING 156": 577,
+   "ASCENDING 149": 537,
+   "ASCENDING 49": 1
+  },
+  "pista_mas_densa": "DESCENDING 156",
+  "fechas_pista_mas_densa": 495,
+  "intervalo_mediano_dias": 6,
+  "intervalo_maximo_dias": 48
+ },
+ "Uyuni (Colcha K)": {
+  "lon": -67.7,
+  "lat": -20.4,
+  "escenas_slc": 1388,
+  "por_direccion": {
+   "ASCENDING": 893,
+   "DESCENDING": 495
+  },
+  "pistas": {
+   "DESCENDING 156": 495,
+   "ASCENDING 149": 454,
+   "ASCENDING 76": 438,
+   "ASCENDING 49": 1
+  },
+  "pista_mas_densa": "DESCENDING 156",
+  "fechas_pista_mas_densa": 495,
+  "intervalo_mediano_dias": 6,
+  "intervalo_maximo_dias": 36
+ },
+ "Cerro de Pasco": {
+  "lon": -76.25,
+  "lat": -10.68,
+  "escenas_slc": 1159,
+  "por_direccion": {
+   "ASCENDING": 818,
+   "DESCENDING": 341
+  },
+  "pistas": {
+   "ASCENDING 120": 426,
+   "ASCENDING 18": 392,
+   "DESCENDING 171": 341
+  },
+  "pista_mas_densa": "DESCENDING 171",
+  "fechas_pista_mas_densa": 341,
+  "intervalo_mediano_dias": 12,
+  "intervalo_maximo_dias": 144
+ },
+ "Cerrejon": {
+  "lon": -72.65,
+  "lat": 11.05,
+  "escenas_slc": 1399,
+  "por_direccion": {
+   "ASCENDING": 921,
+   "DESCENDING": 478
+  },
+  "pistas": {
+   "DESCENDING 69": 478,
+   "ASCENDING 77": 477,
+   "ASCENDING 4": 444
+  },
+  "pista_mas_densa": "ASCENDING 77",
+  "fechas_pista_mas_densa": 477,
+  "intervalo_mediano_dias": 6,
+  "intervalo_maximo_dias": 132
+ },
+ "Bajo Cauca (El Bagre)": {
+  "lon": -74.8,
+  "lat": 7.6,
+  "escenas_slc": 977,
+  "por_direccion": {
+   "DESCENDING": 686,
+   "ASCENDING": 291
+  },
+  "pistas": {
+   "DESCENDING 142": 355,
+   "DESCENDING 69": 330,
+   "ASCENDING 150": 291,
+   "DESCENDING 42": 1
+  },
+  "pista_mas_densa": "DESCENDING 142",
+  "fechas_pista_mas_densa": 355,
+  "intervalo_mediano_dias": 12,
+  "intervalo_maximo_dias": 72
+ }
+}
