@@ -12,6 +12,10 @@ Fuentes:
 - [Examining the potential environmental effects of mining the world's largest lithium deposit — ScienceDaily 2025](https://www.sciencedaily.com/releases/2025/02/250210183627.htm)
 - [Wastewater analysis at Bolivian lithium deposit — Envirotec](https://envirotecmagazine.com/2025/02/18/wastewater-analysis-at-bolivian-lithium-deposit-explores-how-to-avoid-past-environmental-mistakes/)
 
+## Actualización Fase 4 (2026-11-19): primera serie InSAR propia
+
+Se procesaron 295 interferogramas Sentinel-1 de COMET-LiCSAR (2014-2026) con NSBAS propio, con Atacama como control positivo (`../13-fase4-uyuni-insar-y-numero-global.md`). **No se detecta subsidencia alrededor de las pozas de YLB en Llipi** (−67.38°, −20.545°): desde el arranque industrial (dic-2023), la zona de 0-8 km se mueve +0.9 ± 0.9 mm/año respecto del anillo de 10-20 km, lo que descarta a 3σ una subsidencia local mayor de ~1.6 mm/año. En Atacama, el mismo método detecta −5 a −13 mm/año. La sección siguiente describe el estado previo a esta medición.
+
 ## Hallazgo explícito: vacío geodésico total
 
 A diferencia de Atacama (Chile), donde existe cuantificación satelital de subsidencia en cm/año, **no se encontró ningún estudio publicado de InSAR, gravimetría o GRACE downscaled aplicado específicamente al Salar de Uyuni**. Toda la literatura encontrada es química/ambiental (contaminación por arsénico, balance hídrico agrícola), no geodésica.

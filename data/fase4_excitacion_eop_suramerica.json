@@ -1,0 +1,159 @@
+{
+ "supuestos": {
+  "umbral_lod_s": 1e-05,
+  "umbral_polo_mas": 0.03,
+  "seo2023_polo_mas_anio": 1.4115751926500395,
+  "IDR": "Índice de detectabilidad rotacional = señal acumulada en 10 años / precisión diaria IERS"
+ },
+ "casos": [
+  {
+   "caso": "Salar de Atacama (salmuera)",
+   "categoria": "antropica_fluidos",
+   "fuente": "paises/03-chile.md",
+   "dM_kg_anio": -62400000000.0,
+   "lat": -23.5,
+   "lon": -68.3,
+   "chi1_mas_anio": -0.0002937820035376335,
+   "chi2_mas_anio": 0.0007382415749361027,
+   "polo_mas_anio": 0.0007945492360871814,
+   "dLOD_s_anio": -4.0326207897121306e-10
+  },
+  {
+   "caso": "Salar de Uyuni (salmuera, capacidad de diseño)",
+   "categoria": "antropica_fluidos",
+   "fuente": "paises/05-bolivia.md",
+   "dM_kg_anio": -34800000000.0,
+   "lat": -20.3,
+   "lon": -67.7,
+   "chi1_mas_anio": -0.00014961665821462567,
+   "chi2_mas_anio": 0.00036480310764857796,
+   "polo_mas_anio": 0.0003942923430214846,
+   "dLOD_s_anio": -2.7473880992703114e-10
+  },
+  {
+   "caso": "Sabana de Bogotá (cota alta)",
+   "categoria": "antropica_fluidos",
+   "fuente": "paises/01-colombia.md §8",
+   "dM_kg_anio": -100000000000.0,
+   "lat": 4.6,
+   "lon": -74.1,
+   "chi1_mas_anio": 7.625916500560463e-05,
+   "chi2_mas_anio": -0.00026770987874643644,
+   "polo_mas_anio": 0.0002783595506279311,
+   "dLOD_s_anio": -1.2118288056178912e-09
+  },
+  {
+   "caso": "Cerrejón (agua)",
+   "categoria": "antropica_fluidos",
+   "fuente": "paises/01-colombia.md §9",
+   "dM_kg_anio": -6200000000.0,
+   "lat": 11.0,
+   "lon": -72.65,
+   "chi1_mas_anio": 1.2058549762885247e-05,
+   "chi2_mas_anio": -3.8596882005335597e-05,
+   "polo_mas_anio": 4.043671503618684e-05,
+   "dLOD_s_anio": -6.824380595650908e-11
+  },
+  {
+   "caso": "Vaca Muerta (hidrocarburos)",
+   "categoria": "antropica_fluidos",
+   "fuente": "paises/06-argentina.md",
+   "dM_kg_anio": -31000000000.0,
+   "lat": -38.5,
+   "lon": -69.0,
+   "chi1_mas_anio": -0.00018846189314649715,
+   "chi2_mas_anio": 0.0004909600169474312,
+   "polo_mas_anio": 0.0005258893642291919,
+   "dLOD_s_anio": 6.227509240135718e-11
+  },
+  {
+   "caso": "Costa Oriental Lago de Maracaibo (petróleo, ilustrativo)",
+   "categoria": "antropica_fluidos",
+   "fuente": "paises/08-venezuela.md",
+   "dM_kg_anio": -54000000000.0,
+   "lat": 9.8,
+   "lon": -71.2,
+   "chi1_mas_anio": 0.00010163573381202202,
+   "chi2_mas_anio": -0.0002985530065359477,
+   "polo_mas_anio": 0.00031537869315976597,
+   "dLOD_s_anio": -6.092684337764912e-10
+  },
+  {
+   "caso": "Glaciares de Colombia (cota alta)",
+   "categoria": "climatica_inducida",
+   "fuente": "paises/01-colombia.md §11",
+   "dM_kg_anio": -37000000000.0,
+   "lat": 5.5,
+   "lon": -75.4,
+   "chi1_mas_anio": 3.0983422242653424e-05,
+   "chi2_mas_anio": -0.00011894718995639734,
+   "polo_mas_anio": 0.0001229162578847478,
+   "dLOD_s_anio": -4.445985416335431e-10
+  },
+  {
+   "caso": "Glaciares de Ecuador (cota alta)",
+   "categoria": "climatica_inducida",
+   "fuente": "paises/07-ecuador.md",
+   "dM_kg_anio": -92200000000.0,
+   "lat": -0.5,
+   "lon": -78.4,
+   "chi1_mas_anio": -5.63325469071357e-06,
+   "chi2_mas_anio": 2.7443076983607282e-05,
+   "polo_mas_anio": 2.8015282128485557e-05,
+   "dLOD_s_anio": -1.1390291557709966e-09
+  },
+  {
+   "caso": "Amazonía (ganancia neta de agua, GRACE)",
+   "categoria": "natural",
+   "fuente": "paises/02-brasil.md",
+   "dM_kg_anio": 14260000000000.0,
+   "lat": -3.0,
+   "lon": -60.0,
+   "chi1_mas_anio": 0.012975761559211391,
+   "chi2_mas_anio": -0.022474678287453278,
+   "polo_mas_anio": 0.025951523118422776,
+   "dLOD_s_anio": 1.7475888514713604e-07
+  }
+ ],
+ "sumas": {
+  "antropica_directa": {
+   "chi1_mas_anio": -0.0004419071063182444,
+   "chi2_mas_anio": 0.000989144932244392,
+   "polo_mas_anio": 0.0010833695526455075,
+   "polo_mm_anio": 0.03346255498204601,
+   "direccion_lon_grados": 114.07302274641286,
+   "dLOD_s_anio": -2.5050668418477783e-09,
+   "polo_fraccion_seo2023": 0.0007674897931661928,
+   "anios_para_umbral_polo": 27.691381880487818,
+   "anios_para_umbral_lod": 3991.9094504575523,
+   "IDR_polo_10_anios": 0.36112318421516915,
+   "IDR_lod_10_anios": 0.002505066841847778
+  },
+  "antropica_mas_glaciares": {
+   "chi1_mas_anio": -0.00041655693876630455,
+   "chi2_mas_anio": 0.0008976408192716021,
+   "polo_mas_anio": 0.000989585127039078,
+   "polo_mm_anio": 0.030565790447126838,
+   "direccion_lon_grados": 114.89401010783483,
+   "dLOD_s_anio": -4.088694539252318e-09,
+   "polo_fraccion_seo2023": 0.0007010502396130007,
+   "anios_para_umbral_polo": 30.315734523782233,
+   "anios_para_umbral_lod": 2445.768424126068,
+   "IDR_polo_10_anios": 0.329861709013026,
+   "IDR_lod_10_anios": 0.004088694539252318
+  },
+  "todo_incluida_amazonia": {
+   "chi1_mas_anio": 0.012559204620445087,
+   "chi2_mas_anio": -0.021577037468181674,
+   "polo_mas_anio": 0.024966020239548095,
+   "polo_mm_anio": 0.7711374414286443,
+   "direccion_lon_grados": -59.797879809223076,
+   "dLOD_s_anio": 1.7067019060788374e-07,
+   "polo_fraccion_seo2023": 0.01768663856487716,
+   "anios_para_umbral_polo": 1.2016332483972634,
+   "anios_para_umbral_lod": 58.59254017577732,
+   "IDR_polo_10_anios": 8.322006746516031,
+   "IDR_lod_10_anios": 0.17067019060788371
+  }
+ }
+}

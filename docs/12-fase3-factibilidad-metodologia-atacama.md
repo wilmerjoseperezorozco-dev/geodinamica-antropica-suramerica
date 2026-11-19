@@ -28,6 +28,8 @@ Atacama actúa como **control positivo**: el sitio donde el método está public
 
 ## 3. Resultados
 
+> **Corrección (Fase 4, 2026-11-19)**: la coordenada usada para Uyuni (−67.70°, −20.40°) está ~35 km al noroeste del complejo de pozas de YLB (−67.38°, −20.545°, identificado en el mapa de coherencia). La coherencia de Uyuni de esta tabla corresponde al salar, no a la operación. Además, desde la migración del archivo LiCSAR, los interferogramas están en CEDA y en `LiCSAR_products.public`. Ver `13-fase4-uyuni-insar-y-numero-global.md`.
+
 | | Atacama (control) | Salar de Uyuni | Cerro de Pasco | Cerrejón | Bajo Cauca |
 |---|---|---|---|---|---|
 | Sentinel-1 IW SLC 2015-2026: fechas en la pista más densa / intervalo mediano | 495 / 6 d | 495 / 6 d | 341 / 12 d | 477 / 6 d | 355 / 12 d |

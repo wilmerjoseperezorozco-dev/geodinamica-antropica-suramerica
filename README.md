@@ -4,7 +4,7 @@
 
 **Redistribución de masa terrestre inducida por el ser humano (minería, extracción de agua subterránea, embalses) y su efecto medible en la rotación, la deriva polar y el nivel del mar — con foco inicial en Colombia y expansión documentada a Suramérica.**
 
-> Estado: Fase 0 — Marco teórico y línea base completados. Fase 1 (Colombia) en curso.
+> Estado: Fases 0-4 completadas. Fase 4: InSAR propio sobre Uyuni (control en Atacama) y cifra global — la suma antrópica suramericana mueve el polo ~1.1 µas/año, el 0.077 % de la señal global de agua subterránea (ver `docs/13-…`).
 
 ---
 
@@ -58,8 +58,10 @@ docs/
   10-preguntas-no-resueltas.md Brechas de investigación explícitas (Colombia, Suramérica, mundo)
   11-factores-futuros-medicion.md  Qué tendrá que medir la humanidad para un análisis inteligente integrado
   12-fase3-factibilidad-metodologia-atacama.md  Factibilidad de replicar la metodología de Atacama (Uyuni, Cerro de Pasco, Cerrejón, Bajo Cauca)
+  13-fase4-uyuni-insar-y-numero-global.md      InSAR NSBAS propio en Uyuni y Atacama + excitación EOP vectorial de toda Suramérica
+  img/                                          Figuras generadas por los scripts
 data/                          Series y resultados extraídos de fuentes abiertas (ver data/README.md)
-scripts/                       Scripts reproducibles de la Fase 3 (Sentinel-1, LiCSAR, umbrales de detección)
+scripts/                       Scripts reproducibles de las Fases 3-4 (Sentinel-1, LiCSAR, umbrales, NSBAS, excitación EOP)
 CITATION.cff
 LICENSE
 ```

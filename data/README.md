@@ -28,3 +28,10 @@ Generados por los scripts de `scripts/` (todos usan fuentes abiertas sin registr
 - `asf_s1_slc_2015-2026.json` — escenas Sentinel-1 IW SLC que intersectan cada sitio (API pública de ASF), por dirección de órbita, pista, número de fechas e intervalo de revisita. Script: `scripts/s1_disponibilidad_asf.py`.
 - `licsar_cobertura_2026-09.json` — marcos COMET-LiCSAR que contienen cada sitio, con épocas e interferogramas ya procesados y coherencia media publicada (escala uint8 0-255 de LiCSAR, dividida por 255; interpretación de la escala inferida de los valores, no de documentación consultada). Script: `scripts/licsar_cobertura.py`.
 - `umbrales_deteccion_2026-09.json` — umbral de detección empírico de GRACE (a partir de la serie de La Guajira), señal esperada de cada extracción como altura equivalente de agua sobre un mascon de 3°, y tendencias verticales GNSS con su umbral de detección para UYNI (Uyuni), HC03 y JU03 (cerca de Cerro de Pasco) y TPZA (Potosí). Script: `scripts/umbrales_deteccion.py`.
+
+## Archivos de la Fase 4 (InSAR propio en Uyuni y número global)
+
+Generados el 2026-11-19. Análisis en `docs/13-fase4-uyuni-insar-y-numero-global.md`. Las pilas de interferogramas recortados y los mapas NSBAS completos quedan en `.cache/` (no versionado, ~1 GB); se regeneran con los scripts.
+
+- `fase4_insar_uyuni.json`, `fase4_insar_atacama.json` — velocidad vertical: ruido, perfil radial alrededor de la operación, métrica diferencial 0-8 km menos 10-20 km (total, antes y después de la fecha de corte) y tasas por anillo. Scripts: `scripts/fase4_descarga_ventana.py` → `scripts/fase4_sbas.py` → `scripts/fase4_analisis.py`.
+- `fase4_excitacion_eop_suramerica.json` — excitación del movimiento del polo (χ₁, χ₂) y de LOD para cada caso suramericano, sumas vectoriales, comparación con Seo et al. (2023) y con la precisión del IERS, e índice IDR₁₀. Script: `scripts/fase4_excitacion_eop.py`.
